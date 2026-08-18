@@ -116,11 +116,11 @@ export const roadmapData = [
     label: "Head of AI",
     initials: "→",
     org: "LIV4.AI",
-    role: "Head of AI, CTO track",
+    role: "Head of AI",
     period: "Next",
     status: "future",
     description:
-      "Growing into full ownership of AI technical direction and product strategy, on a defined path toward CTO.",
+      "Growing into full ownership of AI technical direction and product strategy at LIV4.AI.",
   },
 ] as const;
 
