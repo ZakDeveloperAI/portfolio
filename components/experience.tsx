@@ -1,59 +1,46 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
 import SectionHeading from "./section-heading";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import { experiencesData } from "@/lib/data";
+import { earlierExperience } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import { useTheme } from "@/context/theme-context";
+
+const easing = [0.16, 1, 0.3, 1] as const;
 
 export default function Experience() {
   const { ref } = useSectionInView("Experience");
-  const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
-      <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
-          <VerticalTimelineElement
-            key={index}
-            className="group cursor-pointer transition-transform duration-300 hover:-translate-y-1"
-            contentStyle={{
-              background:
-                theme === "light" ? "#f3f4f6" : "rgba(255, 255, 255, 0.05)",
-              boxShadow: "none",
-              border: "1px solid rgba(0, 0, 0, 0.05)",
-              textAlign: "left",
-              padding: "1.3rem 2rem",
-            }}
-            contentArrowStyle={{
-              borderRight:
-                theme === "light"
-                  ? "0.4rem solid #9ca3af"
-                  : "0.4rem solid rgba(255, 255, 255, 0.5)",
-            }}
-            date={item.date}
-            icon={item.icon}
-            iconStyle={{
-              background:
-                theme === "light" ? "white" : "rgba(255, 255, 255, 0.15)",
-              fontSize: "1.5rem",
-            }}
-            iconClassName="transition-transform duration-300 group-hover:scale-110"
-          >
-            <h3 className="font-semibold capitalize">{item.title}</h3>
-            <p className="font-normal !mt-0">{item.location}</p>
-            <p className="!mt-1 !font-normal text-gray-700 dark:text-white/75">
-              {item.description}
-            </p>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
+    <section id="experience" ref={ref} className="scroll-mt-24 border-t border-white/5 py-16 sm:py-24">
+      <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-10">
+        <SectionHeading index="02" eyebrow="Earlier chapters that built the foundation.">
+          Foundation
+        </SectionHeading>
+
+        <div className="flex flex-col">
+          {earlierExperience.map((item, index) => (
+            <motion.div
+              key={item.company}
+              className="grid gap-2 border-b border-white/5 py-8 first:pt-0 last:border-b-0 sm:grid-cols-[1fr_10rem] sm:gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0.04 * index, ease: easing }}
+            >
+              <div>
+                <h3 className="mb-2 font-medium text-gray-100">
+                  {item.role}, {item.company}
+                </h3>
+                <p className="max-w-[38rem] leading-relaxed text-gray-400">{item.description}</p>
+              </div>
+              <span className="font-mono text-xs uppercase tracking-wide text-gray-500 sm:text-right">
+                {item.date}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

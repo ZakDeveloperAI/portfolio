@@ -1,56 +1,19 @@
-import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import ecommerceImg from "@/public/multi_vendor_ecommerce.png";
-import reservice_demoImg from "@/public/reservice_demo.png";
-import ai_agentImg from "@/public/ai_agent.png";
-import mobile_movie_appImg from "@/public/mobile_movie_app.png";
-import { link } from "fs";
-import { 
-  FaJs, 
-  FaPython,
-  FaGitAlt,
-  FaNode,
-  FaCube 
-} from 'react-icons/fa';
-import { 
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiMongodb,
-  SiGraphql,
-  SiExpo,
-  SiTensorflow,
-  SiExpress,
-  SiFramer,
-  SiFlask,
-  SiPostgresql
-} from 'react-icons/si';
-import { TbBrandReactNative } from 'react-icons/tb';
-import { GiArtificialIntelligence } from 'react-icons/gi';
-
 export const links = [
   {
     name: "Home",
     hash: "#home",
   },
   {
-    name: "About",
-    hash: "#about",
-  },
-  {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
-    name: "Skills",
-    hash: "#skills",
+    name: "Work",
+    hash: "#work",
   },
   {
     name: "Experience",
     hash: "#experience",
+  },
+  {
+    name: "Stack",
+    hash: "#stack",
   },
   {
     name: "Contact",
@@ -58,188 +21,109 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
-  {
-    title: "Generative & Agentic AI Engineer – Business Group SRL",
-    location: "Bottanuco, BG (Hybrid)",
-    description: "Integrated AI models into industrial machinery; trained YOLO models with Python; developed mobile apps with React Native; created AI Chatbots and Agents with RAG structure based on LangChain/LangGraph.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Mar 2025 – Present"
-  },
-  {
-    title: "Full Stack Developer – ReService",
-    location: "Dalmine, BG (Remote)",
-    description: "Developed and maintained web and mobile applications using React, Next.js, TypeScript, Node.js, and GraphQL.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Feb 2024 – Present"
-  },
-  {
-    title: "BSc Honours in Computer Engineering & AI",
-    location: "Institute of Technology of Malta",
-    description: "2028 (online and on‑campus).",
-    icon: React.createElement(LuGraduationCap),
-    date: "2028"
-  },
-  {
-    title: "IT Diploma",
-    location: "ITI Guglielmo Marconi, Dalmine, BG",
-    description: "Secondary school diploma with a GPA of 4.0/4.0.",
-    icon: React.createElement(LuGraduationCap),
-    date: "Jun 2025"
-  }
-];
+export const heroData = {
+  name: "Zakaria Belfakhir",
+  statement:
+    "Founding AI Engineer building production multi-agent systems and RAG architectures for enterprise clients.",
+  trajectory: "Currently leading AI technical direction at LIV4.AI, on a path toward Head of AI.",
+  location: "Bergamo, Italy — Remote",
+};
 
+export const whatIDo =
+  "I architect multi-agent AI systems and RAG pipelines for enterprise data, and own delivery from design through production. That includes context engineering, agent memory and orchestration, secure agent access to live systems, and leading the engineers who build alongside me.";
 
-
-export const projectsData = [
+export const currentRoleSystems = [
   {
-    title: "Multi-Vendor E-Commerce",
+    title: "Multi-agent product architecture",
     description:
-      "Multi‑vendor E‑commerce platform where sellers can list products and manage storefronts. Includes an AI‑powered user analytics engine that analyzes customer behavior to suggest product.",
-    tags: ["React", "Next.js", "TypeScript", "TensorFlow", "MongoDB", "AWS"],
-    imageUrl: ecommerceImg,
-    link: "https://github.com/ZakDeveloperAI/Reservice",
+      "Designed and built a complete multi-agent system with 10+ specialized agents and dozens of custom tools. Used context engineering and workflow orchestration to reach 95% task accuracy in production.",
+    metric: "95% task accuracy",
   },
   {
-    title: "Mobile Movie App",
+    title: "Enterprise RAG system",
     description:
-      "React Native mobile application for browsing, searching and bookmarking movies. Features include dynamic filtering, detail pages, and offline caching.",
-    tags: ["React Native", "Expo", "SQL", "TypeScript", "Tailwind"],
-    imageUrl: mobile_movie_appImg,
-    link: "https://github.com/ZakDeveloperAI/React-Native-Mobile-Movie-App",
+      "Built a production RAG pipeline processing 100,000+ legal documents using advanced hybrid retrieval. Achieved better accuracy and lower latency than internal target benchmarks.",
+    metric: "100,000+ documents in production",
   },
   {
-    title: "ReService Demo",
+    title: "Agent memory architecture",
     description:
-      "Showcase demo of a booking platform for beauty and wellness services. Users can book appointments, while providers manage schedules, customers and analytics via an admin dashboard.",
-    tags: ["React", "TypeScript", "Next.js", "GraphQL", "Tailwind"],
-    imageUrl: reservice_demoImg,
-    link: "https://github.com/ZakDeveloperAI/Reservice",
+      "Designed and fully built the memory system underlying the multi-agent product. Reached 95% context accuracy while cutting infrastructure costs and latency by 75%.",
+    metric: "75% lower cost and latency",
   },
   {
-    title: "AI Agent",
+    title: "Secure agent-to-system integration",
     description:
-      "Autonomous AI assistant built with Python, LangChain and HuggingFace. It performs document saving, search, and reasoning via LLMs",
-    tags: ["Python", "LangChain", "HuggingFace","Conda"],
-    imageUrl: ai_agentImg,
-    link: "https://github.com/ZakDeveloperAI/AI_Agent_From_Scratch",
+      "Implemented autonomous agent access to APIs and databases for real-time CRUD operations and data analysis, with security and reliability treated as first-class constraints, not afterthoughts.",
+    metric: "Real-time CRUD and analysis",
+  },
+  {
+    title: "Technical leadership",
+    description:
+      "Leading and coordinating a growing team of AI engineers, owning technical direction and delivery. Maintained 100% on-time sprint delivery.",
+    metric: "100% on-time delivery",
   },
 ] as const;
 
+export const currentRoleStack =
+  "Python, LLM orchestration (GPT-4, Claude, Gemini), LangChain, LangGraph, RAG, MCP, AWS, Docker";
 
-export const skillsData = [
+export const earlierExperience = [
   {
-    language: "React",
-    icon: SiReact,
-    color: "#149ECA",         
-    darkColor: "#61DAFB"      // Preso dal primo array
+    role: "GenAI & Agentic AI Engineer",
+    company: "Business Group Srl",
+    date: "Mar 2024 — Jul 2025",
+    description:
+      "Trained computer vision models (YOLO, TensorFlow) for defect detection integrated directly into industrial treatment machinery. Fine-tuned a domain-specific LLM chatbot, improving response consistency by 85%.",
   },
   {
-    language: "React Native",
-    icon: TbBrandReactNative,
-    color: "#0D7A9D",         
-    darkColor: "#61DAFB"      // Preso dal primo array
+    role: "Full Stack Developer",
+    company: "Reservice",
+    date: "Feb 2024 — Mar 2024",
+    description:
+      "Built production web and mobile applications with Next.js, React, React Native and Node.js, the engineering foundation this AI work is now built on.",
   },
-  {
-    language: "Next.js",
-    icon: SiNextdotjs,
-    color: "#000000",         
-    darkColor: "#FFFFFF"      // Preso dal primo array
-  },
-  {
-    language: "JavaScript",
-    icon: FaJs,
-    color: "#D6BA00",         
-    darkColor: "#F7DF1E"      // Preso dal primo array
-  },
-  {
-    language: "TypeScript",
-    icon: SiTypescript,
-    color: "#2B6CB0",         
-    darkColor: "#3178C6"      // Preso dal primo array
-  },
-  {
-    language: "Node.js",
-    icon: FaNode,
-    color: "#267326",         
-    darkColor: "#6CC24A"      // Preso dal primo array
-  },
-  {
-    language: "Python",
-    icon: FaPython,
-    color: "#2E5D87",         
-    darkColor: "#4B8BBE"      // Preso dal primo array
-  },
-  {
-    language: "TensorFlow",
-    icon: SiTensorflow,
-    color: "#CC5B00",         
-    darkColor: "#FF8F00"      // Preso dal primo array
-  },
-  {
-    language: "YOLO",
-    icon: FaCube,
-    color: "#6A1B9A",         
-    darkColor: "#9D4DFF"      // Preso dal primo array
-  },
-  {
-    language: "LangChain",
-    icon: GiArtificialIntelligence,
-    color: "#AD1A4D",         
-    darkColor: "#FF3366"      // Preso dal primo array
-  },
-  {
-    language: "Flask",
-    icon: SiFlask,
-    color: "#A31D1D",         
-    darkColor: "#FF4444"      // Preso dal primo array
-  },
-  {
-    language: "Git",
-    icon: FaGitAlt,
-    color: "#D33816",         
-    darkColor: "#F05032"      // Preso dal primo array
-  },
-  {
-    language: "Tailwind",
-    icon: SiTailwindcss,
-    color: "#2A918F",         
-    darkColor: "#44C1C1"      // Preso dal primo array
-  },
-  {
-    language: "Expo",
-    icon: SiExpo,
-    color: "#3520B0",         
-    darkColor: "#858BFF"      // Preso dal primo array
-  },
-  {
-    language: "MongoDB",
-    icon: SiMongodb,
-    color: "#3C803C",         
-    darkColor: "#6BCB77"      // Preso dal primo array
-  },
-  {
-    language: "GraphQL",
-    icon: SiGraphql,
-    color: "#C41C7D",         
-    darkColor: "#FF79C6"      // Preso dal primo array
-  },
-  {
-    language: "Express",
-    icon: SiExpress,
-    color: "#CC5500",         
-    darkColor: "#FF9248"      // Preso dal primo array
-  },
-  {
-    language: "SQL",
-    icon: SiPostgresql,
-    color: "#2B4F6E",         
-    darkColor: "#4F9DD6"      // Preso dal primo array
-  },
-  {
-    language: "Framer Motion",
-    icon: SiFramer,
-    color: "#0044CC",         
-    darkColor: "#4D8AFF"      // Preso dal primo array
-  }
 ] as const;
+
+export const techStack = [
+  {
+    category: "AI & ML",
+    items: [
+      "Python",
+      "LLM Orchestration",
+      "LangChain",
+      "LangGraph",
+      "RAG",
+      "MCP",
+      "Computer Vision",
+      "TensorFlow",
+    ],
+  },
+  {
+    category: "Infrastructure & Delivery",
+    items: ["AWS", "Docker", "Linux", "PostgreSQL", "DynamoDB", "CI/CD"],
+  },
+  {
+    category: "Full-Stack Engineering",
+    items: ["TypeScript", "Next.js", "React", "React Native", "Node.js", "GraphQL"],
+  },
+] as const;
+
+export const education = [
+  {
+    degree: "BSc (Honours), Computer Engineering & Artificial Intelligence",
+    school: "Epicode Institute of Technology",
+    date: "2025 — 2028, in progress",
+  },
+  {
+    degree: "Computer Science Diploma",
+    school: "ITIS Guglielmo Marconi",
+    date: "94/100",
+  },
+] as const;
+
+export const contactData = {
+  statement: "Open to conversations with founders and technical leaders building serious AI products.",
+  email: "belfakhirzakaria@gmail.com",
+  linkedin: "https://www.linkedin.com/in/zakaria-belfakhir-8b3221319/",
+};

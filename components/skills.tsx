@@ -1,77 +1,39 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
-import { skillsData } from "@/lib/data";
-import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import SectionHeading from "./section-heading";
+import { techStack } from "@/lib/data";
+import { useSectionInView } from "@/lib/hooks";
 
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+const easing = [0.16, 1, 0.3, 1] as const;
 
-export default function Skills() {
-  const { ref } = useSectionInView("Skills");
+export default function Stack() {
+  const { ref } = useSectionInView("Stack");
 
   return (
-    <section
-      id="skills"
-      ref={ref}
-      className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-    >
-      <SectionHeading>My skills</SectionHeading>
-      <ul className="flex flex-wrap justify-center gap-2 text-lg">
-        {skillsData.map((skill, index) => (
-          <motion.li
-            className="flex items-center gap-2 rounded-xl px-5 py-3 border-[1.5px] transition-all 
-                       hover:scale-[1.08] cursor-pointer relative
-                       bg-[var(--light-bg)] dark:bg-[var(--dark-bg)] 
-                       text-[var(--light-color)] dark:text-[var(--dark-color)] 
-                       border-[var(--light-border)] dark:border-[var(--dark-border)]
-                       hover:shadow-[0_0_20px_-5px_var(--light-glow)]
-                       dark:hover:shadow-[0_0_24px_-6px_var(--dark-glow)]
-                       hover:border-[var(--light-border-hover)]
-                       dark:hover:border-[var(--dark-border-hover)]
-                       hover:bg-[var(--light-bg-hover)]
-                       dark:hover:bg-[var(--dark-bg-hover)]
-                       filter hover:drop-shadow-[0_0_8px_var(--light-glow)]
-                       dark:hover:drop-shadow-[0_0_12px_var(--dark-glow)]"
-            style={{
-              '--light-color': skill.color,
-              '--dark-color': skill.darkColor,
-              '--light-bg': `${skill.color}1a`,
-              '--dark-bg': `${skill.darkColor}1a`,
-              '--light-border': skill.color,
-              '--dark-border': skill.darkColor,
-              '--light-glow': skill.color,
-              '--dark-glow': skill.darkColor,
-              '--light-border-hover': `${skill.color}cc`,
-              '--dark-border-hover': `${skill.darkColor}cc`,
-              '--light-bg-hover': `${skill.color}22`,
-              '--dark-bg-hover': `${skill.darkColor}22`,
-            } as React.CSSProperties}
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            custom={index}
-          >
-            <skill.icon className="text-xl relative z-10" />
-            <span className="relative z-10">{skill.language}</span>
-          </motion.li>
-        ))}
-      </ul>
+    <section id="stack" ref={ref} className="scroll-mt-24 border-t border-white/5 py-16 sm:py-24">
+      <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-10">
+        <SectionHeading index="03">Technical foundation</SectionHeading>
+
+        <div className="flex flex-col">
+          {techStack.map((group, index) => (
+            <motion.div
+              key={group.category}
+              className="grid gap-2 border-b border-white/5 py-6 first:pt-0 last:border-b-0 sm:grid-cols-[12rem_1fr] sm:gap-6"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: 0.04 * index, ease: easing }}
+            >
+              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-gray-500">
+                {group.category}
+              </h3>
+              <p className="leading-relaxed text-gray-300">{group.items.join(" · ")}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
