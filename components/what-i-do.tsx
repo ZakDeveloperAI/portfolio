@@ -7,7 +7,7 @@ import { whatIDo } from "@/lib/data";
 export default function WhatIDo() {
   return (
     <section className="border-t border-white/5 py-16 sm:py-20">
-      <div className="grid gap-4 sm:grid-cols-[8rem_1fr] sm:gap-10">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-10">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-gray-500">Focus</p>
         <motion.p
           className="max-w-[42rem] text-xl leading-relaxed text-gray-200 sm:text-2xl"

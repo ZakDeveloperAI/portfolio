@@ -21,7 +21,7 @@ export default function Contact() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true, margin: "-60px" }}
     >
-      <div className="grid gap-8 sm:grid-cols-[8rem_1fr] sm:gap-10">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-10">
         <SectionHeading index="04">Contact</SectionHeading>
 
         <div>

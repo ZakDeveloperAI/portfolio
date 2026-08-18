@@ -14,13 +14,13 @@ export default function CurrentRole() {
 
   return (
     <section id="work" ref={ref} className="scroll-mt-24 border-t border-white/5 py-16 sm:py-24">
-      <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-10">
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-10">
         <SectionHeading index="01" eyebrow="Founding AI Engineer, LIV4.AI. Jul 2025 to present.">
           Systems I own
         </SectionHeading>
 
         <div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {currentRoleSystems.map((system, index) => (
               <motion.div
                 key={system.title}

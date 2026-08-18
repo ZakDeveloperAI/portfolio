@@ -13,14 +13,14 @@ export default function Stack() {
 
   return (
     <section id="stack" ref={ref} className="scroll-mt-24 border-t border-white/5 py-16 sm:py-24">
-      <div className="grid gap-10 sm:grid-cols-[8rem_1fr] sm:gap-10">
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-[8rem_minmax(0,1fr)] sm:gap-10">
         <SectionHeading index="03">Technical foundation</SectionHeading>
 
         <div className="flex flex-col">
           {techStack.map((group, index) => (
             <motion.div
               key={group.category}
-              className="grid gap-2 border-b border-white/5 py-6 first:pt-0 last:border-b-0 sm:grid-cols-[12rem_1fr] sm:gap-6"
+              className="grid grid-cols-1 gap-2 border-b border-white/5 py-6 first:pt-0 last:border-b-0 sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-6"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}

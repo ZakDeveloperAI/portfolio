@@ -8,8 +8,8 @@ export const links = [
     hash: "#work",
   },
   {
-    name: "Experience",
-    hash: "#experience",
+    name: "Roadmap",
+    hash: "#roadmap",
   },
   {
     name: "Stack",
@@ -77,20 +77,46 @@ export const currentRoleSystems = [
 export const currentRoleStack =
   "Python, LLM orchestration (GPT-4, Claude, Gemini), LangChain, LangGraph, RAG, MCP, AWS, Docker";
 
-export const earlierExperience = [
+export const roadmapData = [
   {
+    id: "reservice",
+    label: "Reservice",
+    org: "Reservice",
+    role: "Full Stack Developer",
+    period: "Feb 2024 — Mar 2024",
+    status: "past",
+    description:
+      "Built production web and mobile applications with Next.js, React, React Native and Node.js: the engineering foundation the AI work is now built on.",
+  },
+  {
+    id: "business-group",
+    label: "Business Group",
+    org: "Business Group Srl",
     role: "GenAI & Agentic AI Engineer",
-    company: "Business Group Srl",
-    date: "Mar 2024 — Jul 2025",
+    period: "Mar 2024 — Jul 2025",
+    status: "past",
     description:
       "Trained computer vision models (YOLO, TensorFlow) for defect detection integrated directly into industrial treatment machinery. Fine-tuned a domain-specific LLM chatbot, improving response consistency by 85%.",
   },
   {
-    role: "Full Stack Developer",
-    company: "Reservice",
-    date: "Feb 2024 — Mar 2024",
+    id: "liv4ai",
+    label: "LIV4.AI",
+    org: "LIV4.AI",
+    role: "Founding AI Engineer",
+    period: "Jul 2025 — Present",
+    status: "current",
     description:
-      "Built production web and mobile applications with Next.js, React, React Native and Node.js, the engineering foundation this AI work is now built on.",
+      "Full ownership of AI product development: architecture, multi-agent systems, RAG pipelines, and technical leadership of a growing engineering team.",
+  },
+  {
+    id: "head-of-ai",
+    label: "Head of AI",
+    org: "LIV4.AI",
+    role: "Head of AI, CTO track",
+    period: "Next",
+    status: "future",
+    description:
+      "Growing into full ownership of AI technical direction and product strategy, on a defined path toward CTO.",
   },
 ] as const;
 

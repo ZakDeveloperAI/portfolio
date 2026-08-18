@@ -1,7 +1,7 @@
 import Hero from "@/components/hero";
 import WhatIDo from "@/components/what-i-do";
 import CurrentRole from "@/components/current-role";
-import Experience from "@/components/experience";
+import Roadmap from "@/components/roadmap";
 import Stack from "@/components/skills";
 import Education from "@/components/education";
 import Contact from "@/components/contact";
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <WhatIDo />
       <CurrentRole />
-      <Experience />
+      <Roadmap />
       <Stack />
       <Education />
       <Contact />
