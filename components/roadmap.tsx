@@ -24,23 +24,25 @@ export default function Roadmap() {
         </SectionHeading>
 
         <div>
-          <div className="flex items-center pb-7 sm:pb-8">
+          <div className="flex items-center pb-9 sm:pb-10">
             {roadmapData.map((node, index) => (
               <div key={node.id} className="flex flex-1 items-center last:flex-none">
                 <button
                   type="button"
                   onClick={() => setActiveId(node.id)}
-                  className="group relative flex h-3 w-3 shrink-0 items-center justify-center outline-none"
+                  className="group relative flex h-8 w-8 shrink-0 items-center justify-center outline-none sm:h-9 sm:w-9"
                 >
                   <span
                     className={clsx(
-                      "flex h-3 w-3 shrink-0 items-center justify-center rounded-full border transition",
+                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border font-mono text-[0.6rem] transition sm:h-9 sm:w-9 sm:text-xs",
                       node.id === activeId
-                        ? "border-teal-300 bg-teal-300"
-                        : "border-white/25 bg-gray-950 group-hover:border-white/50",
+                        ? "border-teal-300 bg-teal-300/10 text-teal-300"
+                        : "border-white/15 bg-gray-950 text-gray-500 group-hover:border-white/30 group-hover:text-gray-300",
                       node.status === "future" && "border-dashed"
                     )}
-                  />
+                  >
+                    {node.initials}
+                  </span>
                   <span
                     className={clsx(
                       "absolute top-full mt-2 whitespace-nowrap font-mono text-[0.6rem] uppercase tracking-wide transition sm:text-xs",
@@ -72,10 +74,23 @@ export default function Roadmap() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35, ease: easing }}
             >
-              <div className="mb-3 flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-medium text-gray-100">
-                  {active.role}, {active.org}
-                </h3>
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <span
+                    className={clsx(
+                      "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border font-mono text-xs",
+                      active.status === "current"
+                        ? "border-teal-300 bg-teal-300/10 text-teal-300"
+                        : "border-white/15 text-gray-400",
+                      active.status === "future" && "border-dashed"
+                    )}
+                  >
+                    {active.initials}
+                  </span>
+                  <h3 className="text-lg font-medium text-gray-100">
+                    {active.role}, {active.org}
+                  </h3>
+                </div>
                 <span className="font-mono text-xs uppercase tracking-wide text-gray-500">
                   {active.period}
                 </span>

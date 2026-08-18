@@ -81,6 +81,7 @@ export const roadmapData = [
   {
     id: "reservice",
     label: "Reservice",
+    initials: "RS",
     org: "Reservice",
     role: "Full Stack Developer",
     period: "Feb 2024 — Mar 2024",
@@ -91,6 +92,7 @@ export const roadmapData = [
   {
     id: "business-group",
     label: "Business Group",
+    initials: "BG",
     org: "Business Group Srl",
     role: "GenAI & Agentic AI Engineer",
     period: "Mar 2024 — Jul 2025",
@@ -101,6 +103,7 @@ export const roadmapData = [
   {
     id: "liv4ai",
     label: "LIV4.AI",
+    initials: "L4",
     org: "LIV4.AI",
     role: "Founding AI Engineer",
     period: "Jul 2025 — Present",
@@ -111,6 +114,7 @@ export const roadmapData = [
   {
     id: "head-of-ai",
     label: "Head of AI",
+    initials: "→",
     org: "LIV4.AI",
     role: "Head of AI, CTO track",
     period: "Next",
