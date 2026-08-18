@@ -30,38 +30,47 @@ export const heroData = {
 };
 
 export const whatIDo =
-  "I architect multi-agent AI systems and RAG pipelines for enterprise data, and own delivery from design through production. That includes context engineering, agent memory and orchestration, secure agent access to live systems, and leading the engineers who build alongside me.";
+  "I architect multi-agent AI systems and RAG pipelines for enterprise data, and own delivery end to end: design, build, ship, lead.";
+
+export const statsData = [
+  { value: "10+", label: "Specialized agents in production" },
+  { value: "95%", label: "Task accuracy" },
+  { value: "100K+", label: "Legal documents processed" },
+  { value: "100%", label: "On-time sprint delivery" },
+] as const;
 
 export const currentRoleSystems = [
   {
     title: "Multi-agent product architecture",
     description:
-      "Designed and built a complete multi-agent system with 10+ specialized agents and dozens of custom tools. Used context engineering and workflow orchestration to reach 95% task accuracy in production.",
-    metric: "95% task accuracy",
+      "10+ specialized agents, dozens of custom tools. Context engineering and workflow orchestration.",
+    metric: "95%",
+    metricLabel: "task accuracy",
+    featured: true,
   },
   {
     title: "Enterprise RAG system",
-    description:
-      "Built a production RAG pipeline processing 100,000+ legal documents using advanced hybrid retrieval. Achieved better accuracy and lower latency than internal target benchmarks.",
-    metric: "100,000+ documents in production",
+    description: "Advanced hybrid retrieval over legal documents, beating internal benchmarks.",
+    metric: "100K+",
+    metricLabel: "documents in production",
   },
   {
     title: "Agent memory architecture",
-    description:
-      "Designed and fully built the memory system underlying the multi-agent product. Reached 95% context accuracy while cutting infrastructure costs and latency by 75%.",
-    metric: "75% lower cost and latency",
+    description: "Built the memory layer under the multi-agent product from the ground up.",
+    metric: "75%",
+    metricLabel: "lower cost and latency",
   },
   {
     title: "Secure agent-to-system integration",
-    description:
-      "Implemented autonomous agent access to APIs and databases for real-time CRUD operations and data analysis, with security and reliability treated as first-class constraints, not afterthoughts.",
-    metric: "Real-time CRUD and analysis",
+    description: "Autonomous agent access to APIs and databases for real-time CRUD and analysis.",
+    metric: "Live",
+    metricLabel: "CRUD and analysis",
   },
   {
     title: "Technical leadership",
-    description:
-      "Leading and coordinating a growing team of AI engineers, owning technical direction and delivery. Maintained 100% on-time sprint delivery.",
-    metric: "100% on-time delivery",
+    description: "Leading a growing team of AI engineers, owning technical direction and delivery.",
+    metric: "100%",
+    metricLabel: "on-time delivery",
   },
 ] as const;
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import clsx from "clsx";
 import SectionHeading from "./section-heading";
 import { currentRoleSystems, currentRoleStack } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
@@ -19,30 +20,25 @@ export default function CurrentRole() {
         </SectionHeading>
 
         <div>
-          <div className="flex flex-col">
+          <div className="grid gap-4 sm:grid-cols-2">
             {currentRoleSystems.map((system, index) => (
               <motion.div
                 key={system.title}
-                className="grid gap-2 border-b border-white/5 py-8 first:pt-0 last:border-b-0 sm:grid-cols-[3rem_1fr_10rem] sm:gap-6"
+                className={clsx(
+                  "rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:border-white/20 sm:p-7",
+                  "featured" in system && system.featured && "sm:col-span-2"
+                )}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: 0.04 * index, ease: easing }}
+                transition={{ duration: 0.5, delay: 0.05 * index, ease: easing }}
               >
-                <span className="font-mono text-sm text-gray-600">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="mb-2 text-lg font-medium text-gray-100">{system.title}</h3>
-                  <p className="max-w-[38rem] leading-relaxed text-gray-400">
-                    {system.description}
-                  </p>
-                </div>
-                <div className="sm:text-right">
-                  <span className="inline-block rounded-full border border-teal-300/20 bg-teal-300/[0.06] px-3 py-1 font-mono text-xs text-teal-300">
-                    {system.metric}
-                  </span>
-                </div>
+                <p className="font-mono text-4xl text-teal-300 sm:text-5xl">{system.metric}</p>
+                <p className="mb-4 font-mono text-xs uppercase tracking-wide text-gray-500">
+                  {system.metricLabel}
+                </p>
+                <h3 className="mb-2 text-lg font-medium text-gray-100">{system.title}</h3>
+                <p className="max-w-[32rem] leading-relaxed text-gray-400">{system.description}</p>
               </motion.div>
             ))}
           </div>

@@ -8,6 +8,7 @@ import { HiDownload } from "react-icons/hi";
 import { heroData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import Stats from "./stats";
 
 const easing = [0.16, 1, 0.3, 1] as const;
 
@@ -87,6 +88,8 @@ export default function Hero() {
           Download CV
         </a>
       </motion.div>
+
+      <Stats />
     </section>
   );
 }
