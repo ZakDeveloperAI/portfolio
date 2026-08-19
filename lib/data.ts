@@ -148,19 +148,6 @@ export const techStack = [
   },
 ] as const;
 
-export const education = [
-  {
-    degree: "BSc (Honours), Computer Engineering & Artificial Intelligence",
-    school: "Epicode Institute of Technology",
-    date: "2025 — 2028, in progress",
-  },
-  {
-    degree: "Computer Science Diploma",
-    school: "ITIS Guglielmo Marconi",
-    date: "94/100",
-  },
-] as const;
-
 export const contactData = {
   statement: "Open to conversations with founders and technical leaders building serious AI products.",
   email: "belfakhirzakaria@gmail.com",
